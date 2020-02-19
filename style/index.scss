@@ -31,6 +31,18 @@ html {
         z-index: 7;
         font-size: 40px;
         padding: 0 40px;
+        // opacity: 0;
+        // transform: translateY(20px);
+        // animation: fadeIn 1s ease;
+        // animation-fill-mode: forwards;
+        // animation-delay: 1s;
+
+        // @keyframes fadeIn {
+        //   100% {
+        //     transform: translateY(0);
+        //     opacity: 1;
+        //   }
+        // }
 
         span {
           font-weight: 300;
@@ -151,9 +163,10 @@ html {
         animation-fill-mode: forwards;
         animation-delay: 4s;
       }
+
       .icon-2 {
         top: 3%;
-        left: 40%;
+        left: 35%;
         transform: rotate(25deg);
         animation: H ease-in-out 5s infinite;
         animation-fill-mode: forwards;
@@ -277,7 +290,7 @@ html {
       @keyframes C {
         25% {
           left: 45%;
-          top: 50%;
+          top: 60%;
           transform: translate(-50%, 0);
         }
         34% {
@@ -304,7 +317,7 @@ html {
       @keyframes D {
         25% {
           left: 55%;
-          top: 50%;
+          top: 60%;
           transform: translate(-50%, 0);
         }
         34% {
@@ -329,7 +342,7 @@ html {
 
       @keyframes E {
         25% {
-          left: 47.5%;
+          left: 45%;
           top: 10%;
           transform: translate(-50%, 0);
         }
@@ -355,7 +368,7 @@ html {
 
       @keyframes F {
         25% {
-          left: 52.5%;
+          left: 55%;
           top: 10%;
           transform: translate(-50%, 0);
         }
@@ -382,7 +395,7 @@ html {
       @keyframes G {
         25% {
           left: 35%;
-          top: 50%;
+          top: 60%;
           transform: translate(-50%, 0);
         }
         34% {
@@ -408,7 +421,7 @@ html {
       @keyframes H {
         25% {
           left: 65%;
-          top: 50%;
+          top: 60%;
           transform: translate(-50%, 0);
         }
         34% {
