@@ -1,0 +1,475 @@
+body,
+html {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #fbfcfc;
+
+  header {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .top-section {
+      position: relative;
+      background-color: #1e4e62;
+      height: 55vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      justify-content: flex-end;
+
+      .title {
+        margin: auto;
+        margin-top: 15vh;
+        text-align: center;
+        font-family: Rajdhani;
+        color: white;
+        z-index: 7;
+
+        span {
+          font-weight: 300;
+        }
+      }
+
+      // Stars
+
+      @function multiple-box-shadow($n) {
+        $value: "#{random(2000)}px #{random(20000)}px #FFF";
+        @for $i from 2 through $n {
+          $value: "#{$value} , #{random(2000)}px #{random(2000)}px #FFF";
+        }
+        @return unquote($value);
+      }
+
+      $shadows-small: multiple-box-shadow(700);
+      $shadows-medium: multiple-box-shadow(200);
+      $shadows-big: multiple-box-shadow(100);
+
+      #stars {
+        width: 1px;
+        height: 1px;
+        background: transparent;
+        box-shadow: $shadows-small;
+        animation: animStar 40s linear infinite;
+
+        &:after {
+          content: " ";
+          position: absolute;
+          top: 2000px;
+          width: 1px;
+          height: 1px;
+          background: transparent;
+          box-shadow: $shadows-small;
+        }
+      }
+
+      #stars2 {
+        width: 2px;
+        height: 2px;
+        background: transparent;
+        box-shadow: $shadows-medium;
+        animation: animStar 80s linear infinite;
+
+        &:after {
+          content: " ";
+          position: absolute;
+          top: 2000px;
+          width: 2px;
+          height: 2px;
+          background: transparent;
+          box-shadow: $shadows-medium;
+        }
+      }
+
+      #stars3 {
+        width: 3px;
+        height: 3px;
+        background: transparent;
+        box-shadow: $shadows-big;
+        animation: animStar 120s linear infinite;
+
+        &:after {
+          content: " ";
+          position: absolute;
+          top: 2000px;
+          width: 3px;
+          height: 3px;
+          background: transparent;
+          box-shadow: $shadows-big;
+        }
+      }
+
+      @keyframes animStar {
+        from {
+          transform: translateY(0px);
+        }
+        to {
+          transform: translateY(-2000px);
+        }
+      }
+
+      //Icons
+
+      .icon-sm {
+        width: 30px;
+        position: absolute;
+      }
+
+      .icon-md {
+        width: 45px;
+        position: absolute;
+      }
+
+      .icon-bg {
+        width: 60px;
+        position: absolute;
+      }
+
+      .icon-1 {
+        top: 0;
+        left: 5%;
+        transform: rotate(-25deg);
+        animation: I ease-in-out 3s;
+        animation-fill-mode: forwards;
+        animation-delay: 4s;
+      }
+      .icon-2 {
+        top: 3%;
+        left: 40%;
+        transform: rotate(25deg);
+        animation: H ease-in-out 3s;
+        animation-fill-mode: forwards;
+        animation-delay: 3s;
+      }
+      .icon-3 {
+        top: 10%;
+        left: 60%;
+        transform: rotate(-5deg);
+        animation: E ease-in-out 3s;
+        animation-fill-mode: forwards;
+        animation-delay: 2s;
+      }
+      .icon-4 {
+        top: 15%;
+        left: 80%;
+        animation: C ease-in-out 3s;
+        animation-fill-mode: forwards;
+        animation-delay: 1s;
+      }
+      .icon-5 {
+        top: 15%;
+        left: 95%;
+        transform: rotate(-30deg);
+        animation: J ease-in-out 3s;
+        animation-fill-mode: forwards;
+        animation-delay: 4s;
+      }
+      .icon-6 {
+        top: 60%;
+        left: 45%;
+        transform: rotate(-15deg);
+        animation: F ease-in-out 3s;
+        animation-fill-mode: forwards;
+        animation-delay: 2s;
+      }
+      .icon-7 {
+        top: 60%;
+        left: 75%;
+        transform: rotate(10deg);
+        animation: G ease-in-out 3s;
+        animation-fill-mode: forwards;
+        animation-delay: 3s;
+      }
+      .icon-8 {
+        top: 75%;
+        left: 55%;
+        transform: rotate(15deg);
+        animation: A ease-in-out 3s;
+        animation-fill-mode: forwards;
+      }
+      .icon-9 {
+        top: 40%;
+        left: 15%;
+        transform: rotate(-5deg);
+        animation: D ease-in-out 3s;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+      }
+      .icon-10 {
+        top: 60%;
+        left: 30%;
+        transform: rotate(25deg);
+        animation: B ease-in-out 3s;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes A {
+        75% {
+          left: 35%;
+          top: 10%;
+          transform: translate(-50%, 0);
+        }
+        85% {
+          opacity: 1;
+        }
+
+        90% {
+          opacity: 0;
+        }
+
+        100% {
+          left: 50%;
+          top: 75vh;
+          transform: translate(-50%,0);
+          opacity: 0;
+        }
+      }
+
+      @keyframes B {
+        75% {
+          left: 65%;
+          top: 10%;
+          transform: translate(-50%, 0);
+        }
+        85% {
+          opacity: 1;
+        }
+
+        90% {
+          opacity: 0;
+        }
+
+        100% {
+          left: 50%;
+          top: 75vh;
+          transform: translate(-50%,0);
+          opacity: 0;
+        }
+      }
+
+      @keyframes C {
+        75% {
+          left: 45%;
+          top: 45%;
+          transform: translate(-50%, 0);
+        }
+        85% {
+          opacity: 1;
+        }
+
+        90% {
+          opacity: 0;
+        }
+
+        100% {
+          left: 50%;
+          top: 75vh;
+          transform: translate(-50%,0);
+          opacity: 0;
+        }
+      }
+
+      @keyframes D {
+        75% {
+          left: 55%;
+          top: 45%;
+          transform: translate(-50%, 0);
+        }
+        85% {
+          opacity: 1;
+        }
+
+        90% {
+          opacity: 0;
+        }
+
+        100% {
+          left: 50%;
+          top: 75vh;
+          transform: translate(-50%,0);
+          opacity: 0;
+        }
+      }
+
+      @keyframes E {
+        75% {
+          left: 25%;
+          top: 10%;
+          transform: translate(-50%, 0);
+        }
+        85% {
+          opacity: 1;
+        }
+
+        90% {
+          opacity: 0;
+        }
+
+        100% {
+          left: 55%;
+          top: 75vh;
+          transform: translate(-50%,0);
+          opacity: 0;
+        }
+      }
+
+      @keyframes F {
+        75% {
+          left: 75%;
+          top: 10%;
+          transform: translate(-50%, 0);
+        }
+        85% {
+          opacity: 1;
+        }
+
+        90% {
+          opacity: 0;
+        }
+
+        100% {
+          left: 45%;
+          top: 75vh;
+          transform: translate(-50%,0);
+          opacity: 0;
+        }
+      }
+
+      @keyframes G {
+        75% {
+          left: 35%;
+          top: 50%;
+          transform: translate(-50%, 0);
+        }
+        85% {
+          opacity: 1;
+        }
+
+        90% {
+          opacity: 0;
+        }
+
+        100% {
+          left: 55%;
+          top: 75vh;
+          transform: translate(-50%,0);
+          opacity: 0;
+        }
+      }
+
+      @keyframes H {
+        75% {
+          left: 65%;
+          top: 50%;
+          transform: translate(-50%, 0);
+        }
+        85% {
+          opacity: 1;
+        }
+
+        90% {
+          opacity: 0;
+        }
+
+        100% {
+          left: 45%;
+          top: 75vh;
+          transform: translate(-50%,0);
+          opacity: 0;
+        }
+      }
+
+      @keyframes I {
+        75% {
+          left: 45%;
+          top: 5%;
+          transform: translate(-50%, 0);
+        }
+        85% {
+          opacity: 1;
+        }
+
+        90% {
+          opacity: 0;
+        }
+
+        100% {
+          left: 50%;
+          top: 75vh;
+          transform: translate(-50%,0);
+          opacity: 0;
+        }
+      }
+
+      @keyframes J {
+        75% {
+          left: 55%;
+          top: 5%;
+          transform: translate(-50%, 0);
+        }
+        85% {
+          opacity: 1;
+        }
+
+        90% {
+          opacity: 0;
+        }
+
+        100% {
+          left: 50%;
+          top: 75vh;
+          transform: translate(-50%,0);
+          opacity: 0;
+        }
+      }
+  
+      //Lines and Tube
+      .tube {
+        position: absolute;
+        bottom: 0.5px;
+        left: 50%;
+        transform: translateX(-50%) translateY(100%);
+        width: 200px;
+        z-index: 3;
+      }
+
+      .line-left {
+        position: absolute;
+        bottom: -0.5px;
+        left: 0;
+        width: calc(50% - 99.5px);
+        z-index: 2;
+      }
+
+      .line-right {
+        position: absolute;
+        bottom: -0.5px;
+        right: 0;
+        width: calc(50% - 99.5px);
+        z-index: 2;
+      }
+    }
+
+    .bottom-section {
+      z-index: 3;
+      height: 25vh;
+      background-image: url("../images/City_002.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: bottom center;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+
+      img {
+        min-width: 140px;
+        max-width: 140px;
+        width: 10%;
+      }
+    }
+  }
+}
