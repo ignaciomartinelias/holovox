@@ -553,7 +553,8 @@ html {
       background-image: url("../images/City_002.svg");
       background-size: cover;
       background-repeat: no-repeat;
-      background-position: bottom center;
+      background-position-x: center;
+      background-position-y: 150px;
       display: flex;
       justify-content: center;
       align-items: flex-end;
