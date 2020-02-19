@@ -1,21 +1,24 @@
-const edificio = document.querySelector(".bottom-section img");
+setTimeout(function(){
+    document.getElementById("building-base").style.display = "none";
+    document.getElementById("building-1").style.display = "block";
+}, 2900)
 
 setTimeout(function(){
-    edificio.src = "../images/Building-1.png";
-}, 2750)
+        document.getElementById("building-1").style.display = "none";
+    document.getElementById("building-2").style.display = "block";
+}, 3900)
 
 setTimeout(function(){
-    edificio.src = "../images/Building-2.png";
-}, 3750)
+        document.getElementById("building-2").style.display = "none";
+    document.getElementById("building-3").style.display = "block";
+}, 4900)
 
 setTimeout(function(){
-    edificio.src = "../images/Building-3.png";
-}, 4750)
+        document.getElementById("building-3").style.display = "none";
+    document.getElementById("building-4").style.display = "block";
+}, 5900)
 
 setTimeout(function(){
-    edificio.src = "../images/Building-4.png";
-}, 5750)
-
-setTimeout(function(){
-    edificio.src = "../images/Building.svg";
-}, 6750)
+        document.getElementById("building-4").style.display = "none";
+    document.getElementById("building").style.display = "block";
+}, 6900)

@@ -470,6 +470,15 @@ html {
         max-width: 140px;
         width: 10%;
       }
+
+      #building-1,
+      #building-2,
+      #building-3,
+      #building-4,
+      #building {
+        display: none;
+      }
+
     }
   }
 }
