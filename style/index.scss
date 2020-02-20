@@ -508,6 +508,10 @@ html {
         .icon-bg {
           width: 45px;
         }
+
+        .icon-9 {
+          top: 60%;
+        }
       }
   
       //Lines and Tube
@@ -691,6 +695,12 @@ html {
   }
 }
 
-@media(max-width: 700px) {
-  
+@media(max-width:700px){
+  body header {
+    height: 95vh;
+
+    .top-section {
+      height: 55vh;
+    }
+  }
 }
