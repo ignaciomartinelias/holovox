@@ -183,6 +183,7 @@ html {
       .icon-4 {
         top: 15%;
         left: 80%;
+        transform: rotate(-120deg);
         animation: C ease-in-out 5s infinite;
         animation-fill-mode: forwards;
         animation-delay: 1s;
