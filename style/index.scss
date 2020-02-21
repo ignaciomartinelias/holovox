@@ -147,7 +147,7 @@ html {
 
         path {
           opacity: 0;
-          stroke: #346a813d;
+          stroke: #346a816c;
           stroke-width: 10;
           fill: none;
           animation: dash 5s ease-in-out infinite;
@@ -162,11 +162,13 @@ html {
           stroke-dashoffset: calc(var(--pathLength2) / 2.5);
         }
         #path3 {
+          animation: dash-small 5s ease-in-out infinite;
           stroke-dasharray: calc(var(--pathLength3) / 1.5);
           stroke-dashoffset: calc(var(--pathLength3) / 2.5);
           animation-delay: 1s;
         }
         #path4 {
+          animation: dash-small 5s ease-in-out infinite;
           stroke-dasharray: calc(var(--pathLength4) / 1.5);
           stroke-dashoffset: calc(var(--pathLength4) / 2.5);
           animation-delay: 1s;
@@ -182,11 +184,13 @@ html {
           animation-delay: 2s;
         }
         #path7 {
+          animation: dash-small 5s ease-in-out infinite;
           stroke-dasharray: calc(var(--pathLength7) / 1.5);
           stroke-dashoffset: calc(var(--pathLength7) / 2.5);
           animation-delay: 3s;
         }
         #path8 {
+          animation: dash-small 5s ease-in-out infinite;
           stroke-dasharray: calc(var(--pathLength8) / 1.5);
           stroke-dashoffset: calc(var(--pathLength8) / 2.5);
           animation-delay: 3s;
@@ -204,6 +208,33 @@ html {
       }
 
       @keyframes dash {
+        20% {
+          opacity: 0;
+        }
+        25% {
+          opacity: 1;
+          stroke-width: 2;
+        }
+        34% {
+          opacity: 1;
+        }
+
+        36% {
+          opacity: 1;
+        }
+
+        40% {
+          stroke-dashoffset: -100;
+          stroke-width: 0;
+          opacity: 0;
+        }
+        90% {
+          display: none;
+          opacity: 0;
+        }
+      }
+
+      @keyframes dash-small {
         20% {
           opacity: 0;
         }
