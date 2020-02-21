@@ -4,15 +4,16 @@ runAnimation();
 
 window.addEventListener("resize", runAnimation);
 
-function createPath(pathName, elementClassName, index) {
+function createPath(pathName, index) {
     let pathBase = 'path("M initialX , initialY Q finalX , curveHeight finalX , finalY")';
+    let pathBaseTop = 'path("M initialX , initialY Q initialX, middleHeight middleWidth , middleHeight T finalX , finalY")';
     let newPathString = "";
 
     const finalX = Math.round((window.innerWidth / 2));
     const finalY = Math.round(window.innerHeight / 100 * 65);
     let initialY = Math.random() * window.innerHeight / 100 * 50;
     let initialX = Math.random() * window.innerWidth;
-    let curveHeightTop = Math.round(window.innerHeight / 100 * 5);
+    let curveHeightTop = (finalY + initialY) / 3;
     let curveHeightBottom = Math.round(window.innerHeight / 100 * 20);
 
     function recalculateInitialY() {
@@ -60,13 +61,18 @@ function createPath(pathName, elementClassName, index) {
     recalculateInitialY();
     recalculateInitialX();
 
+    const curveWidth = (initialX + finalX) /2;
+
     if (initialY < (window.innerHeight * .2)) {
-        newPathString = pathBase.replace("finalX", finalX)
+        newPathString = pathBaseTop.replace("finalX", finalX)
             .replace("finalX", finalX)
             .replace("finalY", finalY)
             .replace("initialX", initialX)
+            .replace("initialX", initialX)
+            .replace("middleWidth", curveWidth)
             .replace("initialY", initialY)
-            .replace("curveHeight", curveHeightTop);
+            .replace("middleHeight", curveHeightTop)
+            .replace("middleHeight", curveHeightTop);
     } else {
         newPathString = pathBase.replace("finalX", finalX)
             .replace("finalX", finalX)
@@ -76,24 +82,27 @@ function createPath(pathName, elementClassName, index) {
             .replace("curveHeight", curveHeightBottom);
     }
 
-
-    const pathTrailValue = newPathString.replace("path(", "").replace(")", "");
+    const pathTrailName = pathName.replace("--", "");
+    const pathTrailValue = newPathString.replace('path("', "").replace('")', "");
+    const pathTrailLengthName = "--pathLength" + pathName.replace("--path", "");
+    const pathTrail = document.createElementNS("http://www.w3.org/2000/svg",'path');
+    pathTrail.setAttribute('d', pathTrailValue);
+    pathTrail.setAttribute('id', pathTrailName);
+    const pathTrailLengthValue = pathTrail.getTotalLength();
 
     document.documentElement.style.setProperty(pathName, newPathString);
-    const path = document.createElement('path');
-    path.setAttribute('d', pathTrailValue);
-    path.setAttribute('stroke', "white");
-    path.setAttribute('stroke-width', 3);
-    path.setAttribute('fill', 'none');
-    document.getElementsByTagName("svg")[0].appendChild(path);
+    document.documentElement.style.setProperty(pathTrailLengthName, pathTrailLengthValue);
+
+    document.getElementsByTagName("svg")[0].appendChild(pathTrail);
+    
 
 }
 
 function runAnimation() {
+    document.getElementsByTagName("svg")[0].innerHTML = '';
     for (let i = 0; i < 10; i++) {
         const pathName = `--path${i + 1}`;
-        const elementClassName = `icon-${i + 1}`;
-        createPath(pathName, elementClassName, i);
+        createPath(pathName, i);
     }
 }
 

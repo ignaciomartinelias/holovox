@@ -146,27 +146,83 @@ html {
         left: 0;
 
         path {
-          stroke-dasharray: 200;
-          stroke: #346a81;
-          stroke-width: 3;
+          opacity: 0;
+          stroke: #346a813d;
+          stroke-width: 10;
           fill: none;
-          stroke-dashoffset: 1000;
           animation: dash 5s ease-in-out infinite;
+        }
+
+        #path1 {
+          stroke-dasharray: calc(var(--pathLength1) / 1.5);
+          stroke-dashoffset: calc(var(--pathLength1) / 2.5);
+        }
+        #path2 {
+          stroke-dasharray: calc(var(--pathLength2) / 1.5);
+          stroke-dashoffset: calc(var(--pathLength2) / 2.5);
+        }
+        #path3 {
+          stroke-dasharray: calc(var(--pathLength3) / 1.5);
+          stroke-dashoffset: calc(var(--pathLength3) / 2.5);
+          animation-delay: 1s;
+        }
+        #path4 {
+          stroke-dasharray: calc(var(--pathLength4) / 1.5);
+          stroke-dashoffset: calc(var(--pathLength4) / 2.5);
+          animation-delay: 1s;
+        }
+        #path5 {
+          stroke-dasharray: calc(var(--pathLength5) / 1.5);
+          stroke-dashoffset: calc(var(--pathLength5) / 2.5);
+          animation-delay: 2s;
+        }
+        #path6 {          
+          stroke-dasharray: calc(var(--pathLength6) / 1.5);
+          stroke-dashoffset: calc(var(--pathLength6) / 2.5);
+          animation-delay: 2s;
+        }
+        #path7 {
+          stroke-dasharray: calc(var(--pathLength7) / 1.5);
+          stroke-dashoffset: calc(var(--pathLength7) / 2.5);
+          animation-delay: 3s;
+        }
+        #path8 {          
+          stroke-dasharray: calc(var(--pathLength8) / 1.5);
+          stroke-dashoffset: calc(var(--pathLength8) / 2.5);
+          animation-delay: 3s;
+        }
+        #path9 {
+          stroke-dasharray: calc(var(--pathLength9) / 1.5);
+          stroke-dashoffset: calc(var(--pathLength9) / 2.5);
+          animation-delay: 4s;
+        }
+        #path10 {          
+          stroke-dasharray: calc(var(--pathLength10) / 1.5);
+          stroke-dashoffset: calc(var(--pathLength10) / 2.5);
+          animation-delay: 4s;
         }
       }
 
       @keyframes dash {
+        20% {
+          opacity: 0;
+        }
+        25% {
+          opacity: 1;
+          stroke-width: 2;
+        }
         34% {
           opacity: 1;
         }
 
         36% {
-          opacity: 0;
+          opacity: 1;
         }
 
         40% {
-          stroke-dashoffset: 0;
-          opacity: 1;
+          stroke-dashoffset: -50;
+          stroke-width: 0;
+          opacity: 0;
         }
         90% {
           display: none;
@@ -776,7 +832,7 @@ html {
           56% {
             opacity: 1;
           }
-  
+
           58% {
             opacity: 1;
           }
@@ -784,7 +840,7 @@ html {
           60% {
             opacity: 0;
           }
-  
+
           66% {
             offset-distance: 95%;
             offset-rotate: 0deg;
