@@ -61,7 +61,7 @@ function createPath(pathName, index) {
     recalculateInitialY();
     recalculateInitialX();
 
-    const curveWidth = (initialX + finalX) /2;
+    const curveWidth = (initialX + finalX) / 2;
 
     if (initialY < (window.innerHeight * .2)) {
         newPathString = pathBaseTop.replace("finalX", finalX)
@@ -85,7 +85,7 @@ function createPath(pathName, index) {
     const pathTrailName = pathName.replace("--", "");
     const pathTrailValue = newPathString.replace('path("', "").replace('")', "");
     const pathTrailLengthName = "--pathLength" + pathName.replace("--path", "");
-    const pathTrail = document.createElementNS("http://www.w3.org/2000/svg",'path');
+    const pathTrail = document.createElementNS("http://www.w3.org/2000/svg", 'path');
     pathTrail.setAttribute('d', pathTrailValue);
     pathTrail.setAttribute('id', pathTrailName);
     const pathTrailLengthValue = pathTrail.getTotalLength();
@@ -94,7 +94,7 @@ function createPath(pathName, index) {
     document.documentElement.style.setProperty(pathTrailLengthName, pathTrailLengthValue);
 
     document.getElementsByTagName("svg")[0].appendChild(pathTrail);
-    
+
 
 }
 
