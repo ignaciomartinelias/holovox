@@ -37,18 +37,6 @@ html {
         }
       }
 
-      @media(max-width: 1000px) {
-        .title {
-          font-size: 32px;
-        }
-      }
-
-      @media(max-width: 700px) {
-        .title {
-          font-size: 28px;
-        }
-      }
-
       // Stars
 
       @function multiple-box-shadow($n) {
@@ -133,6 +121,7 @@ html {
         position: absolute;
         top: 0;
         left: 0;
+        z-index: 2;
       }
 
       .icon-md {
@@ -140,6 +129,7 @@ html {
         position: absolute;
         top: 0;
         left: 0;
+        z-index: 2;
       }
 
       .icon-bg {
@@ -147,6 +137,41 @@ html {
         position: absolute;
         top: 0;
         left: 0;
+        z-index: 2;
+      }
+
+      svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        path {
+          stroke-dasharray: 200;
+          stroke: #346a81;
+          stroke-width: 3;
+          fill: none;
+          stroke-dashoffset: 1000;
+          animation: dash 5s ease-in-out infinite;
+        }
+      }
+
+      @keyframes dash {
+        34% {
+          opacity: 1;
+        }
+
+        36% {
+          opacity: 0;
+        }
+
+        40% {
+          stroke-dashoffset: 0;
+          opacity: 1;
+        }
+        90% {
+          display: none;
+          opacity: 0;
+        }
       }
 
       .icon-1 {
@@ -162,24 +187,24 @@ html {
       }
 
       @keyframes bla {
-            34% {
-              opacity: 1;
-            }
-    
-            36% {
-              opacity: 0;
-            }
-    
-            40% {
-              offset-distance: 100%;
-              offset-rotate: 0deg;
-              transform: rotate(0deg);
-              opacity: 0;
-            }
-            90% {
-              display: none;
-              opacity: 0;
-            }
+        34% {
+          opacity: 1;
+        }
+
+        36% {
+          opacity: 0;
+        }
+
+        40% {
+          offset-distance: 100%;
+          offset-rotate: 0deg;
+          transform: rotate(0deg);
+          opacity: 0;
+        }
+        90% {
+          display: none;
+          opacity: 0;
+        }
       }
 
       .icon-2 {
@@ -549,24 +574,6 @@ html {
       //   }
       // }
 
-      @media(max-width: 700px) {
-        .icon-sm {
-          width: 35px;
-        }
-  
-        .icon-md {
-          width: 40px;
-        }
-  
-        .icon-bg {
-          width: 45px;
-        }
-
-        .icon-9 {
-          top: 60%;
-        }
-      }
-  
       //Lines and Tube
       .tube {
         position: absolute;
@@ -596,24 +603,6 @@ html {
       .mobile {
         display: none;
         width: calc(50% - 74.5px);
-      }
-
-      @media(max-width: 700px) {
-        .line-left {
-          display: none;
-        }
-        .line-left.mobile {
-          display: block;
-        }
-        .line-right {
-          display: none;
-        }
-        .line-right.mobile {
-          display: block;
-        }
-        .tube {
-          width: 150px;
-        }
       }
     }
 
@@ -696,7 +685,7 @@ html {
         0% {
           opacity: 1;
         }
-        
+
         50% {
           opacity: 1;
         }
@@ -724,7 +713,7 @@ html {
         0% {
           opacity: 1;
         }
-        
+
         50% {
           opacity: 1;
         }
@@ -743,17 +732,104 @@ html {
       #building {
         display: none;
       }
-
     }
   }
 }
 
-@media(max-width:700px){
+@media (max-width: 1000px) {
+  .title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 700px) {
   body header {
     height: 95vh;
 
     .top-section {
       height: 55vh;
+
+      .title {
+        font-size: 28px;
+      }
+      .icon-sm {
+        width: 35px;
+      }
+
+      .icon-md {
+        width: 40px;
+      }
+
+      .icon-bg {
+        width: 45px;
+      }
+
+      .icon-1,
+      .icon-2,
+      .icon-5,
+      .icon-6,
+      .icon-9,
+      .icon-10 {
+        animation: bla2 3s ease-in-out infinite;
+
+        @keyframes bla2 {
+          56% {
+            opacity: 1;
+          }
+  
+          58% {
+            opacity: 1;
+          }
+
+          60% {
+            opacity: 0;
+          }
+  
+          66% {
+            offset-distance: 95%;
+            offset-rotate: 0deg;
+            transform: rotate(0deg);
+            opacity: 0;
+          }
+          95% {
+            display: none;
+            opacity: 0;
+          }
+        }
+      }
+
+      .icon-3,
+      .icon-4,
+      .icon-7,
+      .icon-8 {
+        display: none;
+      }
+
+      .icon-5,
+      .icon-6 {
+        animation-delay: 1s;
+      }
+
+      .icon-9,
+      .icon-10 {
+        animation-delay: 2s;
+      }
+
+      .line-left {
+        display: none;
+      }
+      .line-left.mobile {
+        display: block;
+      }
+      .line-right {
+        display: none;
+      }
+      .line-right.mobile {
+        display: block;
+      }
+      .tube {
+        width: 150px;
+      }
     }
   }
 }

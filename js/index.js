@@ -1,8 +1,8 @@
 // Dynamic path set for icon animation
 
-updateAnimation();
+runAnimation();
 
-window.addEventListener("resize", updateAnimation);
+window.addEventListener("resize", runAnimation);
 
 function createPath(pathName, elementClassName, index) {
     let pathBase = 'path("M initialX , initialY Q finalX , curveHeight finalX , finalY")';
@@ -12,11 +12,11 @@ function createPath(pathName, elementClassName, index) {
     const finalY = Math.round(window.innerHeight / 100 * 65);
     let initialY = Math.random() * window.innerHeight / 100 * 50;
     let initialX = Math.random() * window.innerWidth;
-    let curveHeightTop = Math.round(window.innerHeight / 100 * 20);
-    let curveHeightBottom = Math.round(window.innerHeight / 100 * 50);
+    let curveHeightTop = Math.round(window.innerHeight / 100 * 5);
+    let curveHeightBottom = Math.round(window.innerHeight / 100 * 20);
 
     function recalculateInitialY() {
-        if(index === 0 || index === 1 || index === 4 || index === 5 || index === 8 || index === 9){
+        if (index === 0 || index === 1 || index === 4 || index === 5 || index === 8 || index === 9) {
             if (initialY > (window.innerHeight * .2)) {
                 initialY = Math.random() * window.innerHeight / 100 * 50;
                 recalculateInitialY();
@@ -41,7 +41,7 @@ function createPath(pathName, elementClassName, index) {
                     initialX = Math.random() * window.innerWidth;
                     recalculateInitialX();
                 }
-            }    
+            }
         } else {
             if (index % 2 === 0) {
                 if (initialX < (window.innerWidth * .2) || initialX > (window.innerWidth * .35)) {
@@ -60,29 +60,36 @@ function createPath(pathName, elementClassName, index) {
     recalculateInitialY();
     recalculateInitialX();
 
-    if(initialY < (window.innerHeight * .2)) {
+    if (initialY < (window.innerHeight * .2)) {
         newPathString = pathBase.replace("finalX", finalX)
-        .replace("finalX", finalX)
-        .replace("finalY", finalY)
-        .replace("initialX", initialX)
-        .replace("initialY", initialY)
-        .replace("curveHeight", curveHeightTop);
+            .replace("finalX", finalX)
+            .replace("finalY", finalY)
+            .replace("initialX", initialX)
+            .replace("initialY", initialY)
+            .replace("curveHeight", curveHeightTop);
     } else {
         newPathString = pathBase.replace("finalX", finalX)
-        .replace("finalX", finalX)
-        .replace("finalY", finalY)
-        .replace("initialX", initialX)
-        .replace("initialY", initialY)
-        .replace("curveHeight", curveHeightTop); 
+            .replace("finalX", finalX)
+            .replace("finalY", finalY)
+            .replace("initialX", initialX)
+            .replace("initialY", initialY)
+            .replace("curveHeight", curveHeightBottom);
     }
 
+
+    const pathTrailValue = newPathString.replace("path(", "").replace(")", "");
+
     document.documentElement.style.setProperty(pathName, newPathString);
-    console.log("Limit top:" , (window.innerHeight * .2))
-    console.log("Limit bottom:" , (window.innerHeight * .6))
-    console.log(elementClassName, initialX, initialY);
+    const path = document.createElement('path');
+    path.setAttribute('d', pathTrailValue);
+    path.setAttribute('stroke', "white");
+    path.setAttribute('stroke-width', 3);
+    path.setAttribute('fill', 'none');
+    document.getElementsByTagName("svg")[0].appendChild(path);
+
 }
 
-function updateAnimation() {
+function runAnimation() {
     for (let i = 0; i < 10; i++) {
         const pathName = `--path${i + 1}`;
         const elementClassName = `icon-${i + 1}`;
