@@ -333,7 +333,7 @@ html {
         animation-delay: 4s;
       }
       .icon-10 {
-        omotionpath: var(--path10);
+        motion-path: var(--path10);
         offset-path: var(--path10);
         offset-rotate: 0deg;
         animation: bla 5s ease-in-out infinite;
@@ -574,6 +574,7 @@ html {
           }
 
           66% {
+            motion-offset: 95%;
             offset-distance: 95%;
             offset-rotate: 0deg;
             transform: rotate(0deg);
