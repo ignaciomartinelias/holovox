@@ -263,9 +263,81 @@ html {
 
       .icon-1 {
         transform: rotate(-25deg);
+        motion-path: var(--path1);
         offset-path: var(--path1);
         offset-rotate: 0deg;
         animation: bla 5s ease-in-out infinite;
+      }
+
+      .icon-2 {
+        transform: rotate(25deg);
+        motion-path: var(--path2);
+        offset-path: var(--path2);
+        offset-rotate: 0deg;
+        animation: bla 5s ease-in-out infinite;
+      }
+      .icon-3 {
+        transform: rotate(-5deg);
+        motion-path: var(--path3);
+        offset-path: var(--path3);
+        offset-rotate: 0deg;
+        animation: bla 5s ease-in-out infinite;
+        animation-delay: 1s;
+      }
+      .icon-4 {
+        transform: rotate(-120deg);
+        motion-path: var(--path4);
+        offset-path: var(--path4);
+        offset-rotate: 0deg;
+        animation: bla 5s ease-in-out infinite;
+        animation-delay: 1s;
+      }
+      .icon-5 {
+        transform: rotate(-30deg);
+        motion-path: var(--path5);
+        offset-path: var(--path5);
+        offset-rotate: 0deg;
+        animation: bla 5s ease-in-out infinite;
+        animation-delay: 2s;
+      }
+      .icon-6 {
+        transform: rotate(-15deg);
+        motion-path: var(--path6);
+        offset-path: var(--path6);
+        offset-rotate: 0deg;
+        animation: bla 5s ease-in-out infinite;
+        animation-delay: 2s;
+      }
+      .icon-7 {
+        transform: rotate(10deg);
+        motion-path: var(--path7);
+        offset-path: var(--path7);
+        offset-rotate: 0deg;
+        animation: bla 5s ease-in-out infinite;
+        animation-delay: 3s;
+      }
+      .icon-8 {
+        transform: rotate(15deg);
+        motion-path: var(--path8);
+        offset-path: var(--path8);
+        offset-rotate: 0deg;
+        animation: bla 5s ease-in-out infinite;
+        animation-delay: 3s;
+      }
+      .icon-9 {
+        transform: rotate(-5deg);
+        motion-path: var(--path9);
+        offset-path: var(--path9);
+        offset-rotate: 0deg;
+        animation: bla 5s ease-in-out infinite;
+        animation-delay: 4s;
+      }
+      .icon-10 {
+        omotionpath: var(--path10);
+        offset-path: var(--path10);
+        offset-rotate: 0deg;
+        animation: bla 5s ease-in-out infinite;
+        animation-delay: 4s;
       }
 
       @keyframes bla {
@@ -278,6 +350,7 @@ html {
         }
 
         40% {
+          motion-offset: 100%;
           offset-distance: 100%;
           offset-rotate: 0deg;
           transform: rotate(0deg);
@@ -287,68 +360,6 @@ html {
           display: none;
           opacity: 0;
         }
-      }
-
-      .icon-2 {
-        transform: rotate(25deg);
-        offset-path: var(--path2);
-        offset-rotate: 0deg;
-        animation: bla 5s ease-in-out infinite;
-      }
-      .icon-3 {
-        transform: rotate(-5deg);
-        offset-path: var(--path3);
-        offset-rotate: 0deg;
-        animation: bla 5s ease-in-out infinite;
-        animation-delay: 1s;
-      }
-      .icon-4 {
-        transform: rotate(-120deg);
-        offset-path: var(--path4);
-        offset-rotate: 0deg;
-        animation: bla 5s ease-in-out infinite;
-        animation-delay: 1s;
-      }
-      .icon-5 {
-        transform: rotate(-30deg);
-        offset-path: var(--path5);
-        offset-rotate: 0deg;
-        animation: bla 5s ease-in-out infinite;
-        animation-delay: 2s;
-      }
-      .icon-6 {
-        transform: rotate(-15deg);
-        offset-path: var(--path6);
-        offset-rotate: 0deg;
-        animation: bla 5s ease-in-out infinite;
-        animation-delay: 2s;
-      }
-      .icon-7 {
-        transform: rotate(10deg);
-        offset-path: var(--path7);
-        offset-rotate: 0deg;
-        animation: bla 5s ease-in-out infinite;
-        animation-delay: 3s;
-      }
-      .icon-8 {
-        transform: rotate(15deg);
-        offset-path: var(--path8);
-        offset-rotate: 0deg;
-        animation: bla 5s ease-in-out infinite;
-        animation-delay: 3s;
-      }
-      .icon-9 {
-        transform: rotate(-5deg);
-        offset-path: var(--path9);
-        offset-rotate: 0deg;
-        animation: bla 5s ease-in-out infinite;
-        animation-delay: 4s;
-      }
-      .icon-10 {
-        offset-path: var(--path10);
-        offset-rotate: 0deg;
-        animation: bla 5s ease-in-out infinite;
-        animation-delay: 4s;
       }
 
       //Lines and Tube
