@@ -5,16 +5,16 @@ runAnimation();
 window.addEventListener("resize", runAnimation);
 
 function createPath(pathName, index) {
-    let pathBase = 'path("M initialX , initialY Q finalX , curveHeight finalX , finalY")';
-    let pathBaseTop = 'path("M initialX , initialY Q initialX, middleHeight middleWidth , middleHeight T finalX , finalY")';
-    let newPathString = "";
+    var pathBase = 'path("M initialX , initialY Q finalX , curveHeight finalX , finalY")';
+    var pathBaseTop = 'path("M initialX , initialY Q initialX, middleHeight middleWidth , middleHeight T finalX , finalY")';
+    var newPathString = "";
 
-    const finalX = Math.round((window.innerWidth / 2));
-    const finalY = Math.round(window.innerHeight / 100 * 65);
-    let initialY = Math.random() * window.innerHeight / 100 * 50;
-    let initialX = Math.random() * window.innerWidth;
-    let curveHeightTop = (finalY + initialY) / 3;
-    let curveHeightBottom = Math.round(window.innerHeight / 100 * 20);
+    var finalX = Math.round((window.innerWidth / 2));
+    var finalY = Math.round(window.innerHeight / 100 * 65);
+    var initialY = Math.random() * window.innerHeight / 100 * 50;
+    var initialX = Math.random() * window.innerWidth;
+    var curveHeightTop = (finalY + initialY) / 3;
+    var curveHeightBottom = Math.round(window.innerHeight / 100 * 20);
 
     function recalculateInitialY() {
         if (index === 0 || index === 1 || index === 4 || index === 5 || index === 8 || index === 9) {
@@ -61,7 +61,7 @@ function createPath(pathName, index) {
     recalculateInitialY();
     recalculateInitialX();
 
-    const curveWidth = (initialX + finalX) / 2;
+    var curveWidth = (initialX + finalX) / 2;
 
     if (initialY < (window.innerHeight * .2)) {
         newPathString = pathBaseTop.replace("finalX", finalX)
@@ -82,13 +82,13 @@ function createPath(pathName, index) {
             .replace("curveHeight", curveHeightBottom);
     }
 
-    const pathTrailName = pathName.replace("--", "");
-    const pathTrailValue = newPathString.replace('path("', "").replace('")', "");
-    const pathTrailLengthName = "--pathLength" + pathName.replace("--path", "");
-    const pathTrail = document.createElementNS("http://www.w3.org/2000/svg", 'path');
+    var pathTrailName = pathName.replace("--", "");
+    var pathTrailValue = newPathString.replace('path("', "").replace('")', "");
+    var pathTrailLengthName = "--pathLength" + pathName.replace("--path", "");
+    var pathTrail = document.createElementNS("http://www.w3.org/2000/svg", 'path');
     pathTrail.setAttribute('d', pathTrailValue);
     pathTrail.setAttribute('id', pathTrailName);
-    const pathTrailLengthValue = pathTrail.getTotalLength();
+    var pathTrailLengthValue = pathTrail.getTotalLength();
 
     document.documentElement.style.setProperty(pathName, newPathString);
     document.documentElement.style.setProperty(pathTrailLengthName, pathTrailLengthValue);
@@ -100,13 +100,13 @@ function createPath(pathName, index) {
 
 function runAnimation() {
     document.getElementsByTagName("svg")[0].innerHTML = '';
-    for (let i = 0; i < 10; i++) {
-        const pathName = `--path${i + 1}`;
+    for (var i = 0; i < 10; i++) {
+        var pathName = `--path${i + 1}`;
         createPath(pathName, i);
     }
 }
 
-// Building construction animation
+// Building varruction animation
 
 setTimeout(function () {
     document.getElementById("building-base").style.display = "none";
