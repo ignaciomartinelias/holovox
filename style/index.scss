@@ -262,8 +262,7 @@ html {
       }
 
       .icon-1 {
-        transform: rotate(-25deg);
-        motion-path: var(--path1);
+        transform: rotate(-25deg);  
         offset-path: var(--path1);
         offset-rotate: 0deg;
         animation: bla 5s ease-in-out infinite;
@@ -271,14 +270,12 @@ html {
 
       .icon-2 {
         transform: rotate(25deg);
-        motion-path: var(--path2);
         offset-path: var(--path2);
         offset-rotate: 0deg;
         animation: bla 5s ease-in-out infinite;
       }
       .icon-3 {
         transform: rotate(-5deg);
-        motion-path: var(--path3);
         offset-path: var(--path3);
         offset-rotate: 0deg;
         animation: bla 5s ease-in-out infinite;
@@ -286,7 +283,6 @@ html {
       }
       .icon-4 {
         transform: rotate(-120deg);
-        motion-path: var(--path4);
         offset-path: var(--path4);
         offset-rotate: 0deg;
         animation: bla 5s ease-in-out infinite;
@@ -294,7 +290,6 @@ html {
       }
       .icon-5 {
         transform: rotate(-30deg);
-        motion-path: var(--path5);
         offset-path: var(--path5);
         offset-rotate: 0deg;
         animation: bla 5s ease-in-out infinite;
@@ -302,7 +297,6 @@ html {
       }
       .icon-6 {
         transform: rotate(-15deg);
-        motion-path: var(--path6);
         offset-path: var(--path6);
         offset-rotate: 0deg;
         animation: bla 5s ease-in-out infinite;
@@ -310,7 +304,6 @@ html {
       }
       .icon-7 {
         transform: rotate(10deg);
-        motion-path: var(--path7);
         offset-path: var(--path7);
         offset-rotate: 0deg;
         animation: bla 5s ease-in-out infinite;
@@ -318,7 +311,6 @@ html {
       }
       .icon-8 {
         transform: rotate(15deg);
-        motion-path: var(--path8);
         offset-path: var(--path8);
         offset-rotate: 0deg;
         animation: bla 5s ease-in-out infinite;
@@ -326,14 +318,12 @@ html {
       }
       .icon-9 {
         transform: rotate(-5deg);
-        motion-path: var(--path9);
         offset-path: var(--path9);
         offset-rotate: 0deg;
         animation: bla 5s ease-in-out infinite;
         animation-delay: 4s;
       }
       .icon-10 {
-        motion-path: var(--path10);
         offset-path: var(--path10);
         offset-rotate: 0deg;
         animation: bla 5s ease-in-out infinite;
@@ -350,7 +340,6 @@ html {
         }
 
         40% {
-          motion-offset: 100%;
           offset-distance: 100%;
           offset-rotate: 0deg;
           transform: rotate(0deg);
@@ -397,11 +386,6 @@ html {
     .bottom-section {
       z-index: 3;
       height: 25vh;
-      background-image: url("../images/City_002.svg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position-x: center;
-      background-position-y: bottom;
       display: flex;
       justify-content: center;
       align-items: flex-end;
@@ -411,6 +395,10 @@ html {
         min-width: 140px;
         max-width: 140px;
         width: 10%;
+      }
+
+      .skyline {
+        position: absolute;
       }
 
       img#escombro-1 {
@@ -517,7 +505,12 @@ html {
       #building-2,
       #building-3,
       #building-4,
-      #building {
+      #building-final,
+      #skyline-1,
+      #skyline-2,
+      #skyline-3,
+      #skyline-4,
+      #skyline-final {
         display: none;
       }
     }
@@ -574,7 +567,6 @@ html {
           }
 
           66% {
-            motion-offset: 95%;
             offset-distance: 95%;
             offset-rotate: 0deg;
             transform: rotate(0deg);

@@ -11,20 +11,20 @@ function createPath(pathName, index) {
 
     var finalX = Math.round((window.innerWidth / 2));
     var finalY = Math.round(window.innerHeight / 100 * 65);
-    var initialY = Math.random() * window.innerHeight / 100 * 50;
+    var initialY = Math.random() * window.innerHeight / 100 * 45;
     var initialX = Math.random() * window.innerWidth;
-    var curveHeightTop = (finalY + initialY) / 3;
-    var curveHeightBottom = Math.round(window.innerHeight / 100 * 20);
+    var curveHeightTop = -150;
+    var curveHeightBottom = 0;
 
     function recalculateInitialY() {
         if (index === 0 || index === 1 || index === 4 || index === 5 || index === 8 || index === 9) {
             if (initialY > (window.innerHeight * .2)) {
-                initialY = Math.random() * window.innerHeight / 100 * 50;
+                initialY = Math.random() * window.innerHeight / 100 * 45;
                 recalculateInitialY();
             }
         } else {
-            if (initialY < (window.innerHeight * .4)) {
-                initialY = Math.random() * window.innerHeight / 100 * 50;
+            if (initialY < (window.innerHeight * .35)) {
+                initialY = Math.random() * window.innerHeight / 100 * 45;
                 recalculateInitialY();
             }
         }
@@ -45,12 +45,12 @@ function createPath(pathName, index) {
             }
         } else {
             if (index % 2 === 0) {
-                if (initialX < (window.innerWidth * .2) || initialX > (window.innerWidth * .35)) {
+                if (initialX < (window.innerWidth * .2) || initialX > (window.innerWidth * .40)) {
                     initialX = Math.random() * window.innerWidth;
                     recalculateInitialX();
                 }
             } else {
-                if (initialX < (window.innerWidth * .65) || initialX > (window.innerWidth * .8)) {
+                if (initialX < (window.innerWidth * .60) || initialX > (window.innerWidth * .8)) {
                     initialX = Math.random() * window.innerWidth;
                     recalculateInitialX();
                 }
@@ -61,18 +61,15 @@ function createPath(pathName, index) {
     recalculateInitialY();
     recalculateInitialX();
 
-    var curveWidth = (initialX + finalX) / 2;
+    // var curveWidth = (initialX + finalX) / 2;
 
     if (initialY < (window.innerHeight * .2)) {
-        newPathString = pathBaseTop.replace("finalX", finalX)
-            .replace("finalX", finalX)
-            .replace("finalY", finalY)
-            .replace("initialX", initialX)
-            .replace("initialX", initialX)
-            .replace("middleWidth", curveWidth)
-            .replace("initialY", initialY)
-            .replace("middleHeight", curveHeightTop)
-            .replace("middleHeight", curveHeightTop);
+        newPathString = pathBase.replace("finalX", finalX)
+        .replace("finalX", finalX)
+        .replace("finalY", finalY)
+        .replace("initialX", initialX)
+        .replace("initialY", initialY)
+        .replace("curveHeight", curveHeightTop);
     } else {
         newPathString = pathBase.replace("finalX", finalX)
             .replace("finalX", finalX)
@@ -84,18 +81,17 @@ function createPath(pathName, index) {
 
     var pathTrailName = pathName.replace("--", "");
     var pathTrailValue = newPathString.replace('path("', "").replace('")', "");
-    var pathTrailLengthName = "--pathLength" + pathName.replace("--path", "");
+
     var pathTrail = document.createElementNS("http://www.w3.org/2000/svg", 'path');
     pathTrail.setAttribute('d', pathTrailValue);
     pathTrail.setAttribute('id', pathTrailName);
+
+    var pathTrailLengthName = "--pathLength" + pathName.replace("--path", "");
     var pathTrailLengthValue = pathTrail.getTotalLength();
 
-    document.documentElement.style.setProperty(pathName, newPathString);
     document.documentElement.style.setProperty(pathTrailLengthName, pathTrailLengthValue);
-
+    document.documentElement.style.setProperty(pathName, newPathString);
     document.getElementsByTagName("svg")[0].appendChild(pathTrail);
-
-
 }
 
 function runAnimation() {
@@ -106,11 +102,13 @@ function runAnimation() {
     }
 }
 
-// Building varruction animation
+// Building construction animation
 
 setTimeout(function () {
     document.getElementById("building-base").style.display = "none";
     document.getElementById("building-1").style.display = "block";
+    document.getElementById("skyline-base").style.display = "none";
+    document.getElementById("skyline-1").style.display = "block";
 }, 2000)
 
 setTimeout(function () {
@@ -120,6 +118,8 @@ setTimeout(function () {
     document.getElementById("escombro-4").style.bottom = "50px";
     document.getElementById("building-1").style.display = "none";
     document.getElementById("building-2").style.display = "block";
+    document.getElementById("skyline-1").style.display = "none";
+    document.getElementById("skyline-2").style.display = "block";
 }, 3000)
 
 setTimeout(function () {
@@ -129,6 +129,8 @@ setTimeout(function () {
     document.getElementById("escombro-4").style.bottom = "70px";
     document.getElementById("building-2").style.display = "none";
     document.getElementById("building-3").style.display = "block";
+    document.getElementById("skyline-2").style.display = "none";
+    document.getElementById("skyline-3").style.display = "block";
 }, 4000)
 
 setTimeout(function () {
@@ -138,6 +140,8 @@ setTimeout(function () {
     document.getElementById("escombro-4").style.bottom = "90px";
     document.getElementById("building-3").style.display = "none";
     document.getElementById("building-4").style.display = "block";
+    document.getElementById("skyline-3").style.display = "none";
+    document.getElementById("skyline-4").style.display = "block";
 }, 5000)
 
 setTimeout(function () {
@@ -146,7 +150,9 @@ setTimeout(function () {
     document.getElementById("escombro-3").style.bottom = "120px";
     document.getElementById("escombro-4").style.bottom = "110px";
     document.getElementById("building-4").style.display = "none";
-    document.getElementById("building").style.display = "block";
+    document.getElementById("building-final").style.display = "block";
+    document.getElementById("skyline-4").style.display = "none";
+    document.getElementById("skyline-final").style.display = "block";
 }, 6000)
 
 setTimeout(function () {
@@ -155,5 +161,3 @@ setTimeout(function () {
     document.getElementById("escombro-3").style.display = "none";
     document.getElementById("escombro-4").style.display = "none";
 }, 7000)
-
-
