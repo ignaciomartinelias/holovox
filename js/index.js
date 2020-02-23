@@ -16,6 +16,10 @@ function createPath(pathName, index) {
     var curveHeightTop = -150;
     var curveHeightBottom = 150;
 
+    if(window.innerWidth < 700) {
+        finalY = Math.round(window.innerHeight / 100 * 60);
+    }
+
     function recalculateInitialY() {
         if (index === 0 || index === 1 || index === 4 || index === 5 || index === 8 || index === 9) {
             if (initialY > (window.innerHeight * .2)) {
