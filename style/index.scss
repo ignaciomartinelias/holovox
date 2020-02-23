@@ -114,7 +114,7 @@ html {
         }
       }
 
-      //Icons
+      //Icons and Trails
 
       .icon-sm {
         width: 30px;
@@ -140,6 +140,8 @@ html {
         z-index: 2;
       }
 
+      // Icon trails
+
       svg {
         position: absolute;
         top: 0;
@@ -150,7 +152,7 @@ html {
           stroke: #346a816c;
           stroke-width: 10;
           fill: none;
-          animation: dash 5s ease-in-out infinite;
+          animation: dash 6.25s ease-in infinite;
         }
 
         #path1 {
@@ -162,48 +164,48 @@ html {
           stroke-dashoffset: calc(var(--pathLength2) / 2.5);
         }
         #path3 {
-          animation: dash-small 5s ease-in-out infinite;
+          animation: dash-small 6.25s ease-in infinite;
           stroke-dasharray: calc(var(--pathLength3) / 1.5);
           stroke-dashoffset: calc(var(--pathLength3) / 2.5);
-          animation-delay: 1s;
+          animation-delay: 1.25s;
         }
         #path4 {
-          animation: dash-small 5s ease-in-out infinite;
+          animation: dash-small 6.25s ease-in infinite;
           stroke-dasharray: calc(var(--pathLength4) / 1.5);
           stroke-dashoffset: calc(var(--pathLength4) / 2.5);
-          animation-delay: 1s;
+          animation-delay: 1.25s;
         }
         #path5 {
           stroke-dasharray: calc(var(--pathLength5) / 1.5);
           stroke-dashoffset: calc(var(--pathLength5) / 2.5);
-          animation-delay: 2s;
+          animation-delay: 2.5s;
         }
         #path6 {
           stroke-dasharray: calc(var(--pathLength6) / 1.5);
           stroke-dashoffset: calc(var(--pathLength6) / 2.5);
-          animation-delay: 2s;
+          animation-delay: 2.5s;
         }
         #path7 {
-          animation: dash-small 5s ease-in-out infinite;
+          animation: dash-small 6.25s ease-in infinite;
           stroke-dasharray: calc(var(--pathLength7) / 1.5);
           stroke-dashoffset: calc(var(--pathLength7) / 2.5);
-          animation-delay: 3s;
+          animation-delay: 3.75s;
         }
         #path8 {
-          animation: dash-small 5s ease-in-out infinite;
+          animation: dash-small 6.25s ease-in infinite;
           stroke-dasharray: calc(var(--pathLength8) / 1.5);
           stroke-dashoffset: calc(var(--pathLength8) / 2.5);
-          animation-delay: 3s;
+          animation-delay: 3.75s;
         }
         #path9 {
           stroke-dasharray: calc(var(--pathLength9) / 1.5);
           stroke-dashoffset: calc(var(--pathLength9) / 2.5);
-          animation-delay: 4s;
+          animation-delay: 5s;
         }
         #path10 {
           stroke-dasharray: calc(var(--pathLength10) / 1.5);
           stroke-dashoffset: calc(var(--pathLength10) / 2.5);
-          animation-delay: 4s;
+          animation-delay: 5s;
         }
       }
 
@@ -261,82 +263,81 @@ html {
         }
       }
 
+      // Icons
+
       .icon-1 {
-        transform: rotate(-25deg);  
+        transform: rotate(-25deg);
         offset-path: var(--path1);
         offset-rotate: 0deg;
-        animation: bla 5s ease-in-out infinite;
+        animation: suction 6.25s ease-in infinite;
       }
 
       .icon-2 {
         transform: rotate(25deg);
         offset-path: var(--path2);
         offset-rotate: 0deg;
-        animation: bla 5s ease-in-out infinite;
+        animation: suction 6.25s ease-in infinite;
       }
       .icon-3 {
         transform: rotate(-5deg);
         offset-path: var(--path3);
         offset-rotate: 0deg;
-        animation: bla 5s ease-in-out infinite;
-        animation-delay: 1s;
+        animation: suction 6.25s ease-in infinite;
+        animation-delay: 1.25s;
       }
       .icon-4 {
         transform: rotate(-120deg);
         offset-path: var(--path4);
         offset-rotate: 0deg;
-        animation: bla 5s ease-in-out infinite;
-        animation-delay: 1s;
+        animation: suction 6.25s ease-in infinite;
+        animation-delay: 1.25s;
       }
       .icon-5 {
         transform: rotate(-30deg);
         offset-path: var(--path5);
         offset-rotate: 0deg;
-        animation: bla 5s ease-in-out infinite;
-        animation-delay: 2s;
+        animation: suction 6.25s ease-in infinite;
+        animation-delay: 2.5s;
       }
       .icon-6 {
         transform: rotate(-15deg);
         offset-path: var(--path6);
         offset-rotate: 0deg;
-        animation: bla 5s ease-in-out infinite;
-        animation-delay: 2s;
+        animation: suction 6.25s ease-in infinite;
+        animation-delay: 2.5s;
       }
       .icon-7 {
         transform: rotate(10deg);
         offset-path: var(--path7);
         offset-rotate: 0deg;
-        animation: bla 5s ease-in-out infinite;
-        animation-delay: 3s;
+        animation: suction 6.25s ease-in infinite;
+        animation-delay: 3.75s;
       }
       .icon-8 {
         transform: rotate(15deg);
         offset-path: var(--path8);
         offset-rotate: 0deg;
-        animation: bla 5s ease-in-out infinite;
-        animation-delay: 3s;
+        animation: suction 6.25s ease-in infinite;
+        animation-delay: 3.75s;
       }
       .icon-9 {
         transform: rotate(-5deg);
         offset-path: var(--path9);
         offset-rotate: 0deg;
-        animation: bla 5s ease-in-out infinite;
-        animation-delay: 4s;
+        animation: suction 6.25s ease-in infinite;
+        animation-delay: 5s;
       }
       .icon-10 {
         offset-path: var(--path10);
         offset-rotate: 0deg;
-        animation: bla 5s ease-in-out infinite;
-        animation-delay: 4s;
+        animation: suction 6.25s ease-in infinite;
+        animation-delay: 5s;
       }
 
-      @keyframes bla {
-        34% {
-          opacity: 1;
-        }
+      @keyframes suction {
 
         36% {
-          opacity: 0;
+          opacity: 1;
         }
 
         40% {
@@ -345,7 +346,7 @@ html {
           transform: rotate(0deg);
           opacity: 0;
         }
-        90% {
+        97% {
           display: none;
           opacity: 0;
         }
@@ -408,8 +409,8 @@ html {
         left: calc(50% - 50px);
         transform: translateX(-50%) rotate(-160deg);
         bottom: 40px;
-        animation: swingTopLeft 1s ease-out 5;
-        animation-delay: 1.9s;
+        animation: swingTopLeft 1.25s ease-out 5;
+        animation-delay: 2.4s;
       }
 
       img#escombro-2 {
@@ -419,8 +420,8 @@ html {
         left: calc(50% - 50px);
         transform: translateX(-50%) rotate(160deg);
         bottom: 30px;
-        animation: swingBottomLeft 1s ease-out 5;
-        animation-delay: 1.9s;
+        animation: swingBottomLeft 1.25s ease-out 5;
+        animation-delay: 2.4s;
       }
 
       img#escombro-3 {
@@ -430,8 +431,8 @@ html {
         right: calc(50% - 55px);
         transform: translateX(-50%) rotate(-20deg);
         bottom: 40px;
-        animation: swingTopRight 1s ease-out 5;
-        animation-delay: 1.9s;
+        animation: swingTopRight 1.25s ease-out 5;
+        animation-delay: 2.4s;
       }
 
       img#escombro-4 {
@@ -441,8 +442,8 @@ html {
         right: calc(50% - 55px);
         transform: translateX(-50%) rotate(20deg);
         bottom: 30px;
-        animation: swingBottomRight 1s ease-out 5;
-        animation-delay: 1.9s;
+        animation: swingBottomRight 1.25s ease-out 5;
+        animation-delay: 2.4s;
       }
 
       @keyframes swingTopRight {
@@ -552,9 +553,9 @@ html {
       .icon-6,
       .icon-9,
       .icon-10 {
-        animation: bla2 3s ease-in-out infinite;
+        animation: suction-mobile 3.75s ease-in infinite;
 
-        @keyframes bla2 {
+        @keyframes suction-mobile {
           56% {
             opacity: 1;
           }
@@ -584,9 +585,9 @@ html {
       .icon-4,
       .icon-7,
       .icon-8,
-      #path3, 
-      #path4, 
-      #path7, 
+      #path3,
+      #path4,
+      #path7,
       #path8 {
         display: none;
       }
@@ -595,14 +596,14 @@ html {
       .icon-6,
       #path5,
       #path6 {
-        animation-delay: 1s;
+        animation-delay: 1.25s;
       }
 
       .icon-9,
       .icon-10,
       #path9,
       #path10 {
-        animation-delay: 2s;
+        animation-delay: 2.5s;
       }
 
       .line-left {

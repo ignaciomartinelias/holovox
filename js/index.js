@@ -6,7 +6,7 @@ window.addEventListener("resize", runAnimation);
 
 function createPath(pathName, index) {
     var pathBase = 'path("M initialX , initialY Q finalX , curveHeight finalX , finalY")';
-    var pathBaseTop = 'path("M initialX , initialY Q initialX, middleHeight middleWidth , middleHeight T finalX , finalY")';
+    // var pathBaseTop = 'path("M initialX , initialY Q initialX, middleHeight middleWidth , middleHeight T finalX , finalY")';
     var newPathString = "";
 
     var finalX = Math.round((window.innerWidth / 2));
@@ -14,7 +14,7 @@ function createPath(pathName, index) {
     var initialY = Math.random() * window.innerHeight / 100 * 45;
     var initialX = Math.random() * window.innerWidth;
     var curveHeightTop = -150;
-    var curveHeightBottom = 0;
+    var curveHeightBottom = 150;
 
     function recalculateInitialY() {
         if (index === 0 || index === 1 || index === 4 || index === 5 || index === 8 || index === 9) {
@@ -112,7 +112,7 @@ setTimeout(function () {
     document.getElementById("building-1").style.display = "block";
     document.getElementById("skyline-base").style.display = "none";
     document.getElementById("skyline-1").style.display = "block";
-}, 2000)
+}, 2500)
 
 setTimeout(function () {
     document.documentElement.style.setProperty("--escombroTop", "65px");
@@ -125,7 +125,7 @@ document.documentElement.style.setProperty("--escombroBottom", "45px");
     document.getElementById("building-2").style.display = "block";
     document.getElementById("skyline-1").style.display = "none";
     document.getElementById("skyline-2").style.display = "block";
-}, 3000)
+}, 3750)
 
 setTimeout(function () {
     document.documentElement.style.setProperty("--escombroTop", "85px");
@@ -138,7 +138,7 @@ document.documentElement.style.setProperty("--escombroBottom", "65px");
     document.getElementById("building-3").style.display = "block";
     document.getElementById("skyline-2").style.display = "none";
     document.getElementById("skyline-3").style.display = "block";
-}, 4000)
+}, 5000)
 
 setTimeout(function () {
     document.documentElement.style.setProperty("--escombroTop", "105px");
@@ -151,7 +151,7 @@ document.documentElement.style.setProperty("--escombroBottom", "85px");
     document.getElementById("building-4").style.display = "block";
     document.getElementById("skyline-3").style.display = "none";
     document.getElementById("skyline-4").style.display = "block";
-}, 5000)
+}, 6250)
 
 setTimeout(function () {
     document.documentElement.style.setProperty("--escombroTop", "125px");
@@ -164,11 +164,11 @@ document.documentElement.style.setProperty("--escombroBottom", "105px");
     document.getElementById("building-final").style.display = "block";
     document.getElementById("skyline-4").style.display = "none";
     document.getElementById("skyline-final").style.display = "block";
-}, 6000)
+}, 7500)
 
 setTimeout(function () {
     document.getElementById("escombro-1").style.display = "none";
     document.getElementById("escombro-2").style.display = "none";
     document.getElementById("escombro-3").style.display = "none";
     document.getElementById("escombro-4").style.display = "none";
-}, 7000)
+}, 8750)
