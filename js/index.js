@@ -104,6 +104,9 @@ function runAnimation() {
 
 // Building construction animation
 
+document.documentElement.style.setProperty("--escombroTop", "45px");
+document.documentElement.style.setProperty("--escombroBottom", "25px");
+
 setTimeout(function () {
     document.getElementById("building-base").style.display = "none";
     document.getElementById("building-1").style.display = "block";
@@ -112,6 +115,8 @@ setTimeout(function () {
 }, 2000)
 
 setTimeout(function () {
+    document.documentElement.style.setProperty("--escombroTop", "65px");
+document.documentElement.style.setProperty("--escombroBottom", "45px");
     document.getElementById("escombro-1").style.bottom = "60px";
     document.getElementById("escombro-2").style.bottom = "50px";
     document.getElementById("escombro-3").style.bottom = "60px";
@@ -123,6 +128,8 @@ setTimeout(function () {
 }, 3000)
 
 setTimeout(function () {
+    document.documentElement.style.setProperty("--escombroTop", "85px");
+document.documentElement.style.setProperty("--escombroBottom", "65px");
     document.getElementById("escombro-1").style.bottom = "80px";
     document.getElementById("escombro-2").style.bottom = "70px";
     document.getElementById("escombro-3").style.bottom = "80px";
@@ -134,6 +141,8 @@ setTimeout(function () {
 }, 4000)
 
 setTimeout(function () {
+    document.documentElement.style.setProperty("--escombroTop", "105px");
+document.documentElement.style.setProperty("--escombroBottom", "85px");
     document.getElementById("escombro-1").style.bottom = "100px";
     document.getElementById("escombro-2").style.bottom = "90px";
     document.getElementById("escombro-3").style.bottom = "100px";
@@ -145,6 +154,8 @@ setTimeout(function () {
 }, 5000)
 
 setTimeout(function () {
+    document.documentElement.style.setProperty("--escombroTop", "125px");
+document.documentElement.style.setProperty("--escombroBottom", "105px");
     document.getElementById("escombro-1").style.bottom = "120px";
     document.getElementById("escombro-2").style.bottom = "110px";
     document.getElementById("escombro-3").style.bottom = "120px";

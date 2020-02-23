@@ -450,9 +450,9 @@ html {
           opacity: 1;
         }
 
-        100% {
+        95% {
           right: calc(50% - 65px);
-          bottom: 45px;
+          bottom: --escombroTop;
           opacity: 0;
         }
       }
@@ -466,9 +466,9 @@ html {
           opacity: 1;
         }
 
-        100% {
+        95% {
           right: calc(50% - 65px);
-          bottom: 25px;
+          bottom: --escombroBottom;
           opacity: 0;
         }
       }
@@ -478,9 +478,9 @@ html {
           opacity: 1;
         }
 
-        100% {
+        95% {
           left: calc(50% - 65px);
-          bottom: 50px;
+          bottom: --escombroTop;
           opacity: 0;
         }
       }
@@ -494,9 +494,9 @@ html {
           opacity: 1;
         }
 
-        100% {
+        95% {
           left: calc(50% - 65px);
-          bottom: 25px;
+          bottom: --escombroBottom;
           opacity: 0;
         }
       }
@@ -505,6 +505,7 @@ html {
       #building-2,
       #building-3,
       #building-4,
+      #building-5,
       #building-final,
       #skyline-1,
       #skyline-2,
