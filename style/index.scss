@@ -603,13 +603,13 @@ html {
   }
 }
 
-@media (max-width: 1000px) {
+@media screen and (max-width: 995px) {
   .title {
     font-size: 32px;
   }
 }
 
-@media (max-width: 700px) {
+@media screen and (max-width: 700px) {
   body header {
     height: var(--mobileBrowserHeight);
 
@@ -815,25 +815,17 @@ html {
       .icon-3,
       .icon-4,
       .icon-7,
-      .icon-8,
-      #path3,
-      #path4,
-      #path7,
-      #path8 {
+      .icon-8 {
         display: none;
       }
 
       .icon-5,
-      .icon-6,
-      #path5,
-      #path6 {
+      .icon-6 {
         animation-delay: 1.25s;
       }
 
       .icon-9,
-      .icon-10,
-      #path9,
-      #path10 {
+      .icon-10 {
         animation-delay: 2.5s;
       }
 
@@ -895,6 +887,39 @@ html {
         bottom: 25vh;
         right: calc(0% + 100vw);
         animation: cloudMove2 40s linear infinite;
+      }
+    }
+  }
+}
+
+@media screen and (max-height: 680px) {
+  body header {
+    .top-section {
+      .title {
+        font-size: 24px;
+      }
+    }
+
+    .bottom-section {
+      .skyline {
+        height: 95%;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-height: 600px) {
+  body header {
+    .top-section {
+      .title {
+        font-size: 22px;
+      }
+    }
+
+    .bottom-section {
+      .skyline {
+        height: 110%;
       }
     }
   }
