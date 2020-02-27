@@ -114,8 +114,8 @@ document.documentElement.style.setProperty("--escombroBottom", "25px");
 setTimeout(function () {
     document.getElementById("building-base").style.display = "none";
     document.getElementById("building-1").style.display = "block";
-    document.getElementById("skyline-base").style.display = "none";
-    document.getElementById("skyline-1").style.display = "block";
+    // document.getElementById("skyline-base").style.display = "none";
+    document.getElementById("skyline-1").classList.add('actual-skyline');
 }, 2500)
 
 setTimeout(function () {
@@ -127,8 +127,9 @@ document.documentElement.style.setProperty("--escombroBottom", "45px");
     document.getElementById("escombro-4").style.bottom = "50px";
     document.getElementById("building-1").style.display = "none";
     document.getElementById("building-2").style.display = "block";
-    document.getElementById("skyline-1").style.display = "none";
-    document.getElementById("skyline-2").style.display = "block";
+    // document.getElementById("skyline-1").style.display = "none";
+    // document.getElementById("skyline-2").style.display = "block";
+    document.getElementById("skyline-2").classList.add('actual-skyline');
 }, 3750)
 
 setTimeout(function () {
@@ -140,8 +141,9 @@ document.documentElement.style.setProperty("--escombroBottom", "65px");
     document.getElementById("escombro-4").style.bottom = "70px";
     document.getElementById("building-2").style.display = "none";
     document.getElementById("building-3").style.display = "block";
-    document.getElementById("skyline-2").style.display = "none";
-    document.getElementById("skyline-3").style.display = "block";
+    // document.getElementById("skyline-2").style.display = "none";
+    // document.getElementById("skyline-3").style.display = "block";
+    document.getElementById("skyline-3").classList.add('actual-skyline');
 }, 5000)
 
 setTimeout(function () {
@@ -153,8 +155,9 @@ document.documentElement.style.setProperty("--escombroBottom", "85px");
     document.getElementById("escombro-4").style.bottom = "90px";
     document.getElementById("building-3").style.display = "none";
     document.getElementById("building-4").style.display = "block";
-    document.getElementById("skyline-3").style.display = "none";
-    document.getElementById("skyline-4").style.display = "block";
+    // document.getElementById("skyline-3").style.display = "none";
+    // document.getElementById("skyline-4").style.display = "block";
+    document.getElementById("skyline-4").classList.add('actual-skyline');
 }, 6250)
 
 setTimeout(function () {
@@ -166,8 +169,9 @@ document.documentElement.style.setProperty("--escombroBottom", "105px");
     document.getElementById("escombro-4").style.bottom = "110px";
     document.getElementById("building-4").style.display = "none";
     document.getElementById("building-final").style.display = "block";
-    document.getElementById("skyline-4").style.display = "none";
-    document.getElementById("skyline-final").style.display = "block";
+    // document.getElementById("skyline-4").style.display = "none";
+    // document.getElementById("skyline-final").style.display = "block";
+    document.getElementById("skyline-final").classList.add('actual-skyline');
 }, 7500)
 
 setTimeout(function () {

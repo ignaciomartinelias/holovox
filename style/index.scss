@@ -7,6 +7,7 @@ html {
   background-color: #fbfcfc;
 
   header {
+    position: relative;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -335,7 +336,6 @@ html {
       }
 
       @keyframes suction {
-
         36% {
           opacity: 1;
         }
@@ -384,6 +384,80 @@ html {
       }
     }
 
+    .cloud {
+      position: absolute;
+      animation: cloudMove 20s linear 1;
+      animation-fill-mode: forwards;
+      z-index: 2;
+
+      &.cloud-1 {
+        width: 200px;
+        bottom: 30vh;
+        left: 50px;
+      }
+
+      &.cloud-2 {
+        width: 100px;
+        bottom: 15vh;
+        left: 30%;
+      }
+
+      &.cloud-3 {
+        width: 200px;
+        bottom: 25vh;
+        right: 100px;
+      }
+
+      &.cloud-4,
+      &.cloud-7 {
+        width: 200px;
+        bottom: 30vh;
+        left: calc(50px - 100vw);
+        animation: cloudMove2 40s linear infinite;
+      }
+
+      &.cloud-5,
+      &.cloud-8 {
+        width: 100px;
+        bottom: 15vh;
+        left: calc(30% - 100vw);
+        animation: cloudMove2 40s linear infinite;
+      }
+
+      &.cloud-6,
+      &.cloud-9 {
+        width: 200px;
+        bottom: 25vh;
+        right: calc(100px + 100vw);
+        animation: cloudMove2 40s linear infinite;
+      }
+
+      &.cloud-7,
+      &.cloud-8,
+      &.cloud-9 {
+        animation-delay: 20s;
+      }
+
+    }
+
+    @keyframes cloudMove {
+      90% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateX(100vw);
+        opacity: 0;
+        display: none;
+      }
+    }
+
+    @keyframes cloudMove2 {
+      to {
+        transform: translateX(200vw);
+      }
+    }
+
     .bottom-section {
       z-index: 3;
       height: 25vh;
@@ -400,6 +474,7 @@ html {
 
       .skyline {
         position: absolute;
+        height: 90%;
       }
 
       img#escombro-1 {
@@ -507,13 +582,22 @@ html {
       #building-3,
       #building-4,
       #building-5,
-      #building-final,
+      #building-final {
+        display: none;
+      }
+
       #skyline-1,
       #skyline-2,
       #skyline-3,
       #skyline-4,
       #skyline-final {
-        display: none;
+        opacity: 0;
+        transition: 1s;
+
+        &.actual-skyline {
+          opacity: 1;
+          transition: 1s;
+        }
       }
     }
   }
@@ -556,11 +640,10 @@ html {
         animation: suction-mobile 3.75s ease-in-out infinite;
 
         @keyframes suction-mobile {
-
           59% {
             opacity: 1;
           }
-  
+
           66% {
             offset-distance: 100%;
             offset-rotate: 0deg;
