@@ -1,4 +1,8 @@
-// Dynamic path set for icon animation
+// Dynamic set of height considering browser navigation bar on mobile browser
+
+document.documentElement.style.setProperty('--mobileBrowserHeight', `${window.innerHeight}px`);
+
+// Dynamic path set for icon animation (only > 700px screen)
 
 runAnimation();
 
@@ -6,7 +10,6 @@ window.addEventListener("resize", runAnimation);
 
 function createPath(pathName, index) {
     var pathBase = 'path("M initialX , initialY Q finalX , curveHeight finalX , finalY")';
-    // var pathBaseTop = 'path("M initialX , initialY Q initialX, middleHeight middleWidth , middleHeight T finalX , finalY")';
     var newPathString = "";
 
     var finalX = Math.round((window.innerWidth / 2));
@@ -16,9 +19,9 @@ function createPath(pathName, index) {
     var curveHeightTop = -150;
     var curveHeightBottom = 150;
 
-    if(window.innerWidth < 700) {
-        finalY = Math.round(window.innerHeight / 100 * 60);
-    }
+    // if(window.innerWidth < 700) {
+    //     finalY = Math.round(window.innerHeight / 100 * 55);
+    // }
 
     function recalculateInitialY() {
         if (index === 0 || index === 1 || index === 4 || index === 5 || index === 8 || index === 9) {
@@ -65,8 +68,6 @@ function createPath(pathName, index) {
     recalculateInitialY();
     recalculateInitialX();
 
-    // var curveWidth = (initialX + finalX) / 2;
-
     if (initialY < (window.innerHeight * .2)) {
         newPathString = pathBase.replace("finalX", finalX)
         .replace("finalX", finalX)
@@ -99,10 +100,12 @@ function createPath(pathName, index) {
 }
 
 function runAnimation() {
-    document.getElementsByTagName("svg")[0].innerHTML = '';
-    for (var i = 0; i < 10; i++) {
-        var pathName = `--path${i + 1}`;
-        createPath(pathName, i);
+    if(window.innerWidth > 700) {
+        document.getElementsByTagName("svg")[0].innerHTML = '';
+        for (var i = 0; i < 10; i++) {
+            var pathName = `--path${i + 1}`;
+            createPath(pathName, i);
+        }
     }
 }
 
@@ -114,7 +117,6 @@ document.documentElement.style.setProperty("--escombroBottom", "25px");
 setTimeout(function () {
     document.getElementById("building-base").style.display = "none";
     document.getElementById("building-1").style.display = "block";
-    // document.getElementById("skyline-base").style.display = "none";
     document.getElementById("skyline-1").classList.add('actual-skyline');
 }, 2500)
 
@@ -127,8 +129,6 @@ document.documentElement.style.setProperty("--escombroBottom", "45px");
     document.getElementById("escombro-4").style.bottom = "50px";
     document.getElementById("building-1").style.display = "none";
     document.getElementById("building-2").style.display = "block";
-    // document.getElementById("skyline-1").style.display = "none";
-    // document.getElementById("skyline-2").style.display = "block";
     document.getElementById("skyline-2").classList.add('actual-skyline');
 }, 3750)
 
@@ -141,8 +141,6 @@ document.documentElement.style.setProperty("--escombroBottom", "65px");
     document.getElementById("escombro-4").style.bottom = "70px";
     document.getElementById("building-2").style.display = "none";
     document.getElementById("building-3").style.display = "block";
-    // document.getElementById("skyline-2").style.display = "none";
-    // document.getElementById("skyline-3").style.display = "block";
     document.getElementById("skyline-3").classList.add('actual-skyline');
 }, 5000)
 
@@ -155,8 +153,6 @@ document.documentElement.style.setProperty("--escombroBottom", "85px");
     document.getElementById("escombro-4").style.bottom = "90px";
     document.getElementById("building-3").style.display = "none";
     document.getElementById("building-4").style.display = "block";
-    // document.getElementById("skyline-3").style.display = "none";
-    // document.getElementById("skyline-4").style.display = "block";
     document.getElementById("skyline-4").classList.add('actual-skyline');
 }, 6250)
 
@@ -169,8 +165,6 @@ document.documentElement.style.setProperty("--escombroBottom", "105px");
     document.getElementById("escombro-4").style.bottom = "110px";
     document.getElementById("building-4").style.display = "none";
     document.getElementById("building-final").style.display = "block";
-    // document.getElementById("skyline-4").style.display = "none";
-    // document.getElementById("skyline-final").style.display = "block";
     document.getElementById("skyline-final").classList.add('actual-skyline');
 }, 7500)
 

@@ -437,7 +437,6 @@ html {
       &.cloud-9 {
         animation-delay: 20s;
       }
-
     }
 
     @keyframes cloudMove {
@@ -611,13 +610,14 @@ html {
 
 @media (max-width: 700px) {
   body header {
-    height: 95vh;
+    height: --mobileBrowserHeight;
 
     .top-section {
-      height: 55vh;
+      height: 50%;
 
       .title {
         font-size: 28px;
+        margin-top: 20%;
       }
       .icon-sm {
         width: 35px;
@@ -631,28 +631,183 @@ html {
         width: 45px;
       }
 
-      .icon-1,
-      .icon-2,
-      .icon-5,
-      .icon-6,
-      .icon-9,
+      .icon-1 {
+        left: unset;
+        right: unset;
+        top: 5%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+        animation: suction-mobile-1 3.75s ease-in-out infinite;
+      }
+
+      .icon-2 {
+        left: unset;
+        right: unset;
+        top: 19%;
+        left: 63%;
+        transform: translate(-50%, -50%);
+        animation: suction-mobile-2 3.75s ease-in-out infinite;
+      }
+
+      .icon-5 {
+        left: unset;
+        right: unset;
+        top: 17%;
+        left: 37%;
+        transform: translate(-50%, -50%);
+        animation: suction-mobile-3 3.75s ease-in-out infinite;
+      }
+
+      .icon-6 {
+        left: unset;
+        right: unset;
+        top: 7%;
+        left: 93%;
+        transform: translate(-50%, -50%);
+        animation: suction-mobile-4 3.75s ease-in-out infinite;
+      }
+
+      .icon-9 {
+        left: unset;
+        right: unset;
+        top: 82%;
+        left: 32%;
+        transform: translate(-50%, -50%);
+        animation: suction-mobile-5 3.75s ease-in-out infinite;
+      }
+
       .icon-10 {
-        animation: suction-mobile 3.75s ease-in-out infinite;
+        left: unset;
+        right: unset;
+        top: 78%;
+        left: 72%;
+        transform: translate(-50%, -50%);
+        animation: suction-mobile-6 3.75s ease-in-out infinite;
+      }
 
-        @keyframes suction-mobile {
-          59% {
-            opacity: 1;
-          }
+      @keyframes suction-mobile-1 {
+        33% {
+          left: 60%;
+          top: 5%;
+          transform: translate(-50%, -50%);
+        }
+        59% {
+          opacity: 1;
+        }
 
-          66% {
-            offset-distance: 100%;
-            offset-rotate: 0deg;
-            transform: rotate(0deg);
-            opacity: 0;
-          }
-          95% {
-            opacity: 0;
-          }
+        66% {
+          left: 50%;
+          top: 110%;
+          transform: translate(-50%, -50%) rotate(0deg);
+          opacity: 0;
+        }
+        95% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes suction-mobile-2 {
+        33% {
+          left: 40%;
+          top: 5%;
+          transform: translate(-50%, -50%);
+        }
+        59% {
+          opacity: 1;
+        }
+
+        66% {
+          left: 50%;
+          top: 110%;
+          transform: translate(-50%, -50%) rotate(0deg);
+          opacity: 0;
+        }
+        95% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes suction-mobile-3 {
+        33% {
+          left: 75%;
+          top: 10%;
+          transform: translate(-50%, -50%);
+        }
+        59% {
+          opacity: 1;
+        }
+
+        66% {
+          left: 50%;
+          top: 110%;
+          transform: translate(-50%, -50%) rotate(0deg);
+          opacity: 0;
+        }
+        95% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes suction-mobile-4 {
+        33% {
+          left: 25%;
+          top: 10%;
+          transform: translate(-50%, -50%);
+        }
+        59% {
+          opacity: 1;
+        }
+
+        66% {
+          left: 50%;
+          top: 110%;
+          transform: translate(-50%, -50%) rotate(0deg);
+          opacity: 0;
+        }
+        95% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes suction-mobile-5 {
+        33% {
+          left: 80%;
+          top: 65%;
+          transform: translate(-50%, -50%);
+        }
+        59% {
+          opacity: 1;
+        }
+
+        66% {
+          left: 50%;
+          top: 110%;
+          transform: translate(-50%, -50%) rotate(0deg);
+          opacity: 0;
+        }
+        95% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes suction-mobile-6 {
+        33% {
+          left: 15%;
+          top: 65%;
+          transform: translate(-50%, -50%);
+        }
+        59% {
+          opacity: 1;
+        }
+
+        66% {
+          left: 50%;
+          top: 110%;
+          transform: translate(-50%, -50%) rotate(0deg);
+          opacity: 0;
+        }
+        95% {
+          opacity: 0;
         }
       }
 
@@ -695,6 +850,50 @@ html {
       }
       .tube {
         width: 150px;
+      }
+    }
+
+    .cloud {
+      &.cloud-1 {
+        width: 150px;
+        bottom: 30%;
+        left: 0%;
+      }
+
+      &.cloud-2 {
+        width: 75px;
+        bottom: 15%;
+        left: 40%;
+      }
+
+      &.cloud-3 {
+        width: 150px;
+        bottom: 25%;
+        right: 0%;
+      }
+
+      &.cloud-4,
+      &.cloud-7 {
+        width: 150px;
+        bottom: 30%;
+        left: calc(0% - 100vw);
+        animation: cloudMove2 40s linear infinite;
+      }
+
+      &.cloud-5,
+      &.cloud-8 {
+        width: 75px;
+        bottom: 15%;
+        left: calc(40% - 100vw);
+        animation: cloudMove2 40s linear infinite;
+      }
+
+      &.cloud-6,
+      &.cloud-9 {
+        width: 150px;
+        bottom: 25vh;
+        right: calc(0% + 100vw);
+        animation: cloudMove2 40s linear infinite;
       }
     }
   }
