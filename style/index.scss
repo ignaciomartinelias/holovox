@@ -610,7 +610,7 @@ html {
 
 @media (max-width: 700px) {
   body header {
-    height: --mobileBrowserHeight;
+    height: var(--mobileBrowserHeight);
 
     .top-section {
       height: 50%;
